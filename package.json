@@ -1,6 +1,6 @@
 {
   "name": "shell-tools",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Functions for easy shell handling",
   "main": "index.js",
   "module": "index.mjs",
@@ -36,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/create3000/shell-tools/issues"
   },
-  "homepage": "https://github.com/create3000/shell-tools#readme"
+  "homepage": "https://github.com/create3000/shell-tools#readme",
+  "dependencies": {
+    "x_ite": "^9.1.6"
+  }
 }
