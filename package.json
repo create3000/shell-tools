@@ -1,19 +1,19 @@
 {
   "name": "shell-tools",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Functions for easy shell handling",
-	"main": "index.js",
-	"module": "index.mjs",
-	"exports": {
-		".": {
-			"require": "./index.js",
-			"import": "./index.mjs"
-		}
-	},
-	"files": [
-		"index.js",
-		"index.mjs"
-	],
+  "main": "index.js",
+  "module": "index.mjs",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "import": "./index.mjs"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.mjs"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "sh build/release.sh"
