@@ -36,11 +36,5 @@
   "bugs": {
     "url": "https://github.com/create3000/shell-tools/issues"
   },
-  "homepage": "https://github.com/create3000/shell-tools#readme",
-  "dependencies": {
-    "x_ite": "^9.1.6"
-  },
-  "devDependencies": {
-    "shell-tools": "^1.0.8"
-  }
+  "homepage": "https://github.com/create3000/shell-tools#readme"
 }
