@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+"use strict";
+
+const { sh } = require ("shell-tools");
+
+if (sh`git branch --show-current` !== "development\n")
+{
+	console .error ("Wrong branch, must be development, cannot release version!");
+	process .exit (1);
+}
+
+// merge
+sh`git checkout main`;
+sh`git merge development`;
+
+// version
+const
+	name    = sh`node -p "require('./package.json').name"` .trim (),
+	online  = sh`npm view ${name} version` .trim ();
+
+if (sh`npm pkg get version | sed 's/"//g'` .trim () === online)
+	sh`npm version patch --no-git-tag-version --force`;
+
+const version = sh`npm pkg get version | sed 's/"//g'` .trim ();
+
+console .log (`NPM version ${online}`);
+console .log (`New version ${version}`);
+
+sh`npm i x_ite@latest`;
+
+// commit
+sh`git add -A`;
+sh`git commit -am 'Published version ${version}'`;
+sh`git push origin`;
+
+// tag
+sh`git tag ${version}`;
+sh`git push origin --tags`;
+
+// npm
+sh`npm publish`;
+
+// development
+sh`git checkout development`;
+sh`git merge main`;
+sh`git push origin`;
