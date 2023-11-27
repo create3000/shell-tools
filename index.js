@@ -11,8 +11,8 @@ module .exports = {
       {
          const childProcess = child_process .exec (command);
 
-         childProcess .stdout .on ("data", data => console .log (data));
-         childProcess .stderr .on ("data", data => console .error (data));
+         childProcess .stdout .on ("data", data => process .stdout .write (data));
+         childProcess .stderr .on ("data", data => process .stderr .write (data));
 
          childProcess .on ("exit",  resolve);
          childProcess .on ("error", reject);
