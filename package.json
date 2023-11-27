@@ -1,0 +1,29 @@
+{
+  "name": "shell-tools",
+  "version": "1.0.0",
+  "description": "Functions for easy shell handling",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/create3000/shell-tools.git"
+  },
+  "keywords": [
+    "sh",
+    "system",
+    "shell",
+    "command"
+  ],
+  "author": {
+    "name": "Holger Seelig",
+    "email": "holger.seelig@gmail.com"
+  },
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/create3000/shell-tools/issues"
+  },
+  "homepage": "https://github.com/create3000/shell-tools#readme"
+}
