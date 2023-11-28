@@ -13,7 +13,7 @@ npm i -D shell-tools
 It can be used both as ES module (import) or CommonJS (require).
 
 ```js
-import { sh, system } from "shell-tools";
+import { sh, system, systemSync } from "shell-tools";
 
 const output = sh`ls -la`;
 
