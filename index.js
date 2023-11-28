@@ -35,6 +35,8 @@ module .exports = {
             stderr: "inherit",
             windowsHide: true,
          });
+
+         return 0;
       }
       catch (error)
       {
