@@ -1,4 +1,5 @@
-const { sh, system } = require ("shell-tools");
+const { sh, system, systemSync } = require ("shell-tools");
 
-console .log (sh`ls -la`);
-system ("ls -la")
+console .log (sh`echo Ok 1/2`);
+system ("echo Ok 2/2");
+console .log (systemSync ("cat -xdf"));
