@@ -1,6 +1,6 @@
 {
   "name": "shell-tools",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Functions for easy shell handling",
   "main": "index.js",
   "module": "index.mjs",
