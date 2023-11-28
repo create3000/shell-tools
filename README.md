@@ -18,4 +18,5 @@ import { sh, system } from "shell-tools";
 const output = sh`ls -la`;
 
 const exitCode = await system ("ls -la");
+const exitCode = systemSync ("ls -la");
 ```
