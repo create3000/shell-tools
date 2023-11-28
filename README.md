@@ -16,12 +16,12 @@ It can be used both as ES module (import) or CommonJS (require).
 import { sh, system, systemSync } from "shell-tools";
 
 // You can use only one argument.
-const output   = sh (`ls -la`);
+const output   = sh ("ls -la");
 const exitCode = await system ("ls -la");
 const exitCode = systemSync ("ls -la");
 
 // Or you can use multiple arguments, which is safer.
-const output   = sh (`ls`, `-la`);
+const output   = sh ("ls", "-la");
 const exitCode = await system ("ls", "-la");
 const exitCode = systemSync ("ls", "-la");
 ```
