@@ -23,10 +23,11 @@
     "url": "git+https://github.com/create3000/shell-tools.git"
   },
   "keywords": [
+    "command",
     "sh",
-    "system",
     "shell",
-    "command"
+    "system",
+    "systemSync"
   ],
   "author": {
     "name": "Holger Seelig",
