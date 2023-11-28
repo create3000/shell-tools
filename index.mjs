@@ -2,14 +2,21 @@ import child_process from "child_process";
 
 export function sh (strings, ... values)
 {
-   const command = String .raw ({ raw: strings }, ... values);
-
-   return child_process .execSync (command,
+   try
    {
-      encoding: "utf8",
-      maxBuffer: Infinity,
-      windowsHide: true,
-   });
+      const command = String .raw ({ raw: strings }, ... values);
+
+      return child_process .execSync (command,
+      {
+         encoding: "utf8",
+         maxBuffer: Infinity,
+         windowsHide: true,
+      });
+   }
+   catch (error)
+   {
+      throw new Error (error .stderr);
+   }
 }
 
 export function system (command)
