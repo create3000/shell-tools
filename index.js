@@ -1,18 +1,28 @@
 const child_process = require ("child_process");
 
 module .exports = {
-   sh (strings, ... values)
+   sh (command, ... args)
    {
       try
       {
-         const command = String .raw ({ raw: strings }, ... values);
-
-         return child_process .execSync (command,
+         if (args .length)
          {
-            encoding: "utf8",
-            maxBuffer: Infinity,
-            windowsHide: true,
-         });
+            return child_process .execFileSync (command, args,
+            {
+               encoding: "utf8",
+               maxBuffer: Infinity,
+               windowsHide: true,
+            });
+         }
+         else
+         {
+            return child_process .execSync (command,
+            {
+               encoding: "utf8",
+               maxBuffer: Infinity,
+               windowsHide: true,
+            });
+         }
       }
       catch (error)
       {

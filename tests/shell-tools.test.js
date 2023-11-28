@@ -2,8 +2,11 @@ const { sh, system, systemSync } = require ("shell-tools");
 
 test ("sh", () =>
 {
-   expect (sh`echo test`) .toBe ("test\n");
-   expect (() => sh`cat -xdf`) .toThrow (Error);
+   expect (sh (`echo test`)) .toBe ("test\n");
+   expect (() => sh (`cat -xdf`)) .toThrow (Error);
+
+   expect (sh (`echo`, `test`)) .toBe ("test\n");
+   expect (() => sh (`cat`, `-xdf`)) .toThrow (Error);
 });
 
 test ("system", async () =>

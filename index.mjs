@@ -1,17 +1,27 @@
 import child_process from "child_process";
 
-export function sh (strings, ... values)
+export function sh (command, ... args)
 {
    try
    {
-      const command = String .raw ({ raw: strings }, ... values);
-
-      return child_process .execSync (command,
+      if (args .length)
       {
-         encoding: "utf8",
-         maxBuffer: Infinity,
-         windowsHide: true,
-      });
+         return child_process .execFileSync (command, args,
+         {
+            encoding: "utf8",
+            maxBuffer: Infinity,
+            windowsHide: true,
+         });
+      }
+      else
+      {
+         return child_process .execSync (command,
+         {
+            encoding: "utf8",
+            maxBuffer: Infinity,
+            windowsHide: true,
+         });
+      }
    }
    catch (error)
    {
