@@ -20,6 +20,6 @@ test ("systemSync", () =>
    expect (systemSync ("echo test")) .toBe (0);
    expect (systemSync ("cat -xdf")) .toBe (1);
 
-   expect (systemSync ("echo", "est")) .toBe (0);
+   expect (systemSync ("echo", "test")) .toBe (0);
    expect (systemSync ("cat", "-xdf")) .toBe (1);
 });
