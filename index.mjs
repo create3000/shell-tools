@@ -19,30 +19,57 @@ export function sh (strings, ... values)
    }
 }
 
-export function system (command)
+export function system (command, ... args)
 {
    return new Promise (async (resolve, reject) =>
    {
-      const childProcess = child_process .exec (command, { windowsHide: true });
+      if (args .length)
+      {
+         const childProcess = child_process .execFile (command, args, { windowsHide: true });
 
-      childProcess .stdout .on ("data", data => process .stdout .write (data));
-      childProcess .stderr .on ("data", data => process .stderr .write (data));
+         childProcess .stdout .on ("data", data => process .stdout .write (data));
+         childProcess .stderr .on ("data", data => process .stderr .write (data));
 
-      childProcess .on ("exit",  resolve);
-      childProcess .on ("error", reject);
+         childProcess .on ("exit",  resolve);
+         childProcess .on ("error", reject);
+      }
+      else
+      {
+         const childProcess = child_process .exec (command, { windowsHide: true });
+
+         childProcess .stdout .on ("data", data => process .stdout .write (data));
+         childProcess .stderr .on ("data", data => process .stderr .write (data));
+
+         childProcess .on ("exit",  resolve);
+         childProcess .on ("error", reject);
+      }
    });
 }
 
-export function systemSync (command)
+export function systemSync (command, ... args)
 {
    try
    {
-      child_process .execSync (command,
+      if (args .length)
       {
-         stdio: "inherit",
-         stderr: "inherit",
-         windowsHide: true,
-      });
+         child_process .execFileSync (command, args,
+         {
+            stdio: "inherit",
+            stderr: "inherit",
+            windowsHide: true,
+         });
+
+         return 0;
+      }
+      else
+      {
+         child_process .execSync (command,
+         {
+            stdio: "inherit",
+            stderr: "inherit",
+            windowsHide: true,
+         });
+      }
 
       return 0;
    }
