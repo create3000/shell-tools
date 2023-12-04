@@ -28,8 +28,6 @@ function main ()
 	console .log (`NPM version ${online}`);
 	console .log (`New version ${version}`);
 
-	systemSync (`npm i x_ite@latest`);
-
 	// commit
 	systemSync (`git add -A`);
 	systemSync (`git commit -am 'Published version ${version}'`);
