@@ -1,7 +1,7 @@
 {
   "name": "shell-tools",
   "version": "1.1.9",
-  "description": "Functions for easy shell handling",
+  "description": "Functions For Easy Shell Handling",
   "main": "shell-tools.js",
   "module": "shell-tools.mjs",
   "exports": {
